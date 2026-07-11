@@ -445,6 +445,40 @@ h3 {
   background: linear-gradient(90deg, var(--gold), var(--orange));
 }
 
+.donate-video {
+  margin-top: 22px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: white;
+  box-shadow: 0 12px 36px rgba(24, 32, 42, 0.06);
+}
+
+.donate-video-copy {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 16px 18px;
+}
+
+.donate-video-copy span {
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.donate-video-copy strong {
+  text-align: right;
+}
+
+.donate-video video {
+  width: 100%;
+  max-height: 420px;
+  display: block;
+  background: #111820;
+}
+
 .donate-card {
   padding: 28px;
 }
@@ -928,5 +962,18 @@ h3 {
   .form-panel,
   .donate-card {
     padding: 20px;
+  }
+
+  .donate-video-copy {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .donate-video-copy strong {
+    text-align: left;
+  }
+
+  .donate-video video {
+    max-height: 70vh;
   }
 }
