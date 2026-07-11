@@ -1,0 +1,21 @@
+{
+  "name": "Blagodar",
+  "short_name": "Blagodar",
+  "description": "Христианская экосистема служения, талантов и миссионерских инициатив.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#f5b942",
+  "icons": [
+    {
+      "src": "/assets/blagodar-favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/blagodar-mark.png",
+      "sizes": "1030x1030",
+      "type": "image/png"
+    }
+  ]
+}

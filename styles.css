@@ -86,19 +86,22 @@ select {
   letter-spacing: 0;
 }
 
-.brand span span {
+.brand-text span {
   color: var(--gold);
 }
 
-.brand-mark {
-  width: 38px;
-  height: 38px;
-  display: grid;
-  place-items: center;
+.brand-logo {
+  width: 52px;
+  height: 52px;
+  flex: 0 0 52px;
   border-radius: 50%;
-  color: var(--ink);
-  background: linear-gradient(135deg, var(--gold), var(--sky));
-  box-shadow: 0 8px 24px rgba(245, 185, 66, 0.25);
+  object-fit: cover;
+  background: white;
+  box-shadow: 0 8px 24px rgba(245, 185, 66, 0.28);
+}
+
+.brand-text {
+  line-height: 1;
 }
 
 .main-nav {
