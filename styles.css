@@ -90,6 +90,11 @@ select {
   color: var(--gold);
 }
 
+.brand-copy {
+  display: grid;
+  gap: 4px;
+}
+
 .brand-logo {
   width: 52px;
   height: 52px;
@@ -102,6 +107,15 @@ select {
 
 .brand-text {
   line-height: 1;
+}
+
+.brand-slogan {
+  max-width: 430px;
+  color: currentColor;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.25;
+  opacity: 0.78;
 }
 
 .main-nav {
@@ -848,6 +862,10 @@ h3 {
     display: block;
   }
 
+  .brand-slogan {
+    max-width: min(58vw, 360px);
+  }
+
   .main-nav {
     position: fixed;
     inset: 74px 16px auto 16px;
@@ -898,6 +916,21 @@ h3 {
 
   .site-header {
     padding: 14px;
+  }
+
+  .brand {
+    gap: 8px;
+  }
+
+  .brand-logo {
+    width: 46px;
+    height: 46px;
+    flex-basis: 46px;
+  }
+
+  .brand-slogan {
+    max-width: 210px;
+    font-size: 9px;
   }
 
   .hero,
