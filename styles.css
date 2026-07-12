@@ -110,12 +110,13 @@ select {
 }
 
 .brand-slogan {
-  max-width: 360px;
+  max-width: 390px;
   color: currentColor;
   font-size: 11px;
   font-weight: 700;
   line-height: 1.25;
   opacity: 0.78;
+  white-space: nowrap;
 }
 
 .main-nav {
@@ -946,6 +947,7 @@ h3 {
 
   .brand-slogan {
     max-width: min(54vw, 320px);
+    white-space: normal;
   }
 
   .main-nav {
