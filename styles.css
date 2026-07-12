@@ -882,26 +882,27 @@ h3 {
   gap: 10px;
 }
 
+.footer-contacts {
+  justify-self: end;
+  min-width: 260px;
+}
+
 .footer-grid h3 {
   margin: 0;
 }
 
-.socials {
-  display: flex;
+.telegram-link {
+  display: inline-flex;
+  align-items: center;
   gap: 8px;
-  margin-top: 10px;
 }
 
-.socials a {
-  width: 38px;
-  height: 38px;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  color: var(--ink);
-  background: white;
-  font-size: 12px;
-  font-weight: 900;
+.telegram-link svg {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 16px;
+  color: white;
+  fill: currentColor;
 }
 
 .copyright {
@@ -983,6 +984,11 @@ h3 {
   .author-layout,
   .footer-grid {
     grid-template-columns: 1fr;
+  }
+
+  .footer-contacts {
+    justify-self: start;
+    min-width: 0;
   }
 
   .direction-grid,
