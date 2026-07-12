@@ -34,6 +34,11 @@ body.nav-open {
   overflow: hidden;
 }
 
+section,
+.form-panel {
+  scroll-margin-top: 96px;
+}
+
 img {
   max-width: 100%;
   display: block;

@@ -45,6 +45,7 @@ const testimonials = [
 ];
 
 let testimonialIndex = 0;
+const formTabIds = ["idea-form", "talent-form", "event-form"];
 
 function updateHeader() {
   header.classList.toggle("scrolled", window.scrollY > 20);
@@ -145,13 +146,50 @@ function bindForms() {
 function bindTabs() {
   document.querySelectorAll("[data-tab]").forEach((button) => {
     button.addEventListener("click", () => {
-      document.querySelectorAll("[data-tab]").forEach((tab) => tab.classList.remove("active"));
-      document.querySelectorAll(".form-panel").forEach((panel) => panel.classList.remove("active"));
-      button.classList.add("active");
-      document.getElementById(button.dataset.tab).classList.add("active");
-      document.getElementById(button.dataset.tab).scrollIntoView({ behavior: "smooth", block: "start" });
+      activateFormTab(button.dataset.tab, true);
     });
   });
+}
+
+function activateFormTab(tabId, shouldScroll) {
+  if (!formTabIds.includes(tabId)) return false;
+
+  const tab = document.querySelector(`[data-tab="${tabId}"]`);
+  const panel = document.getElementById(tabId);
+  if (!tab || !panel) return false;
+
+  document.querySelectorAll("[data-tab]").forEach((item) => item.classList.remove("active"));
+  document.querySelectorAll(".form-panel").forEach((item) => item.classList.remove("active"));
+  tab.classList.add("active");
+  panel.classList.add("active");
+
+  if (shouldScroll) {
+    panel.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  return true;
+}
+
+function activateFormTabFromHash(shouldScroll) {
+  const tabId = window.location.hash.slice(1);
+  return activateFormTab(tabId, shouldScroll);
+}
+
+function bindFormLinks() {
+  document.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener("click", (event) => {
+      const tabId = link.getAttribute("href").slice(1);
+      if (!activateFormTab(tabId, true)) return;
+
+      event.preventDefault();
+      if (window.location.hash !== `#${tabId}`) {
+        history.pushState(null, "", `#${tabId}`);
+      }
+    });
+  });
+
+  window.addEventListener("hashchange", () => activateFormTabFromHash(true));
+  window.setTimeout(() => activateFormTabFromHash(true), 0);
 }
 
 function bindAmounts() {
@@ -238,6 +276,7 @@ bindNavigation();
 bindReveal();
 bindForms();
 bindTabs();
+bindFormLinks();
 bindAmounts();
 bindCarousel();
 renderTestimonials();
