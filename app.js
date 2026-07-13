@@ -5,46 +5,6 @@ const toast = document.querySelector("[data-toast]");
 const adminList = document.querySelector("[data-admin-list]");
 
 const submissionsKey = "blagodar_submissions";
-const testimonials = [
-  {
-    name: "Анна",
-    city: "Казань",
-    photo: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=240&q=80",
-    story: "Я пришла с идеей медиа-проекта, а нашла команду, молитвенную поддержку и понятный план запуска."
-  },
-  {
-    name: "Михаил",
-    city: "Москва",
-    photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=240&q=80",
-    story: "Через Blagodar мы закрыли часть бюджета поездки и смогли провести евангелизационные встречи в малых городах."
-  },
-  {
-    name: "Мария",
-    city: "Санкт-Петербург",
-    photo: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=240&q=80",
-    story: "Мой навык дизайна впервые стал настоящим служением: я помогала оформлять материалы для конференции."
-  },
-  {
-    name: "Даниил",
-    city: "Екатеринбург",
-    photo: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=240&q=80",
-    story: "Мне было важно найти людей с тем же сердцем. Здесь идеи быстро превращаются в конкретные шаги."
-  },
-  {
-    name: "Елена",
-    city: "Самара",
-    photo: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=240&q=80",
-    story: "Мы анонсировали молитвенную встречу и получили новых участников из соседних церквей."
-  },
-  {
-    name: "Артём",
-    city: "Новосибирск",
-    photo: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=240&q=80",
-    story: "Регулярная поддержка миссионеров стала для нашей семьи практичным способом быть частью Великого Поручения."
-  }
-];
-
-let testimonialIndex = 0;
 const formTabIds = ["idea-form", "talent-form", "event-form"];
 
 function updateHeader() {
@@ -203,35 +163,6 @@ function bindAmounts() {
   });
 }
 
-function renderTestimonials() {
-  const track = document.querySelector("[data-track]");
-  const visible = testimonials.slice(testimonialIndex, testimonialIndex + 3);
-  const cards = visible.length === 3 ? visible : [...visible, ...testimonials.slice(0, 3 - visible.length)];
-  track.innerHTML = cards
-    .map(
-      (item) => `
-        <article class="testimonial">
-          <img src="${item.photo}" alt="${item.name}" />
-          <h3>${item.name}</h3>
-          <p><strong>${item.city}</strong></p>
-          <p>${item.story}</p>
-        </article>
-      `
-    )
-    .join("");
-}
-
-function bindCarousel() {
-  document.querySelector("[data-next]").addEventListener("click", () => {
-    testimonialIndex = (testimonialIndex + 1) % testimonials.length;
-    renderTestimonials();
-  });
-  document.querySelector("[data-prev]").addEventListener("click", () => {
-    testimonialIndex = (testimonialIndex - 1 + testimonials.length) % testimonials.length;
-    renderTestimonials();
-  });
-}
-
 function bindNavigation() {
   navToggle.addEventListener("click", () => {
     const isOpen = nav.classList.toggle("open");
@@ -278,6 +209,4 @@ bindForms();
 bindTabs();
 bindFormLinks();
 bindAmounts();
-bindCarousel();
-renderTestimonials();
 renderAdminList();
