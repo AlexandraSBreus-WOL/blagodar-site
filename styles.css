@@ -525,39 +525,6 @@ h3 {
   align-content: start;
 }
 
-.project-progress {
-  margin-top: 28px;
-  padding: 22px;
-  border-radius: var(--radius);
-  background: white;
-  box-shadow: 0 12px 36px rgba(24, 32, 42, 0.06);
-}
-
-.project-progress > div:not(.progress-line) {
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
-  margin-bottom: 12px;
-}
-
-.project-progress span {
-  color: var(--muted);
-}
-
-.progress-line {
-  height: 10px;
-  overflow: hidden;
-  border-radius: 999px;
-  background: #e9eef3;
-}
-
-.progress-line span {
-  display: block;
-  height: 100%;
-  border-radius: inherit;
-  background: linear-gradient(90deg, var(--gold), var(--orange));
-}
-
 .donate-video {
   width: min(100%, 430px);
   overflow: hidden;
@@ -1003,14 +970,8 @@ h3 {
     margin-bottom: 24px;
   }
 
-  .donate-layout .project-progress {
-    order: 5;
-    width: 100%;
-    margin: 0 0 24px;
-  }
-
   .donate-layout .donate-card {
-    order: 6;
+    order: 5;
     margin-top: 0;
   }
 
