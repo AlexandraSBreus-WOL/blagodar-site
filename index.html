@@ -279,7 +279,9 @@
               </div>
               <div class="progress-line"><span style="width: 62%"></span></div>
             </div>
-            <div class="donate-video">
+          </div>
+          <div class="donate-aside">
+            <div class="donate-video reveal">
               <div class="donate-video-copy">
                 <span>Видеообращение</span>
                 <strong>Приглашение к участию</strong>
@@ -289,37 +291,37 @@
                 Ваш браузер не поддерживает встроенное видео.
               </video>
             </div>
+            <form class="donate-card reveal" data-form="donation">
+              <div class="segmented" role="radiogroup" aria-label="Тип пожертвования">
+                <label><input type="radio" name="period" value="Разовый донат" checked />Разовый</label>
+                <label><input type="radio" name="period" value="Ежемесячная поддержка" />Ежемесячно</label>
+              </div>
+              <div class="amount-grid" data-amounts>
+                <button type="button" data-amount="500">500 ₽</button>
+                <button type="button" data-amount="1000">1000 ₽</button>
+                <button type="button" data-amount="3000">3000 ₽</button>
+                <button type="button" data-amount="5000">5000 ₽</button>
+              </div>
+              <label class="field">
+                <span>Своя сумма</span>
+                <input name="amount" inputmode="numeric" placeholder="Например, 2500" required />
+              </label>
+              <label class="field">
+                <span>Email для квитанции</span>
+                <input name="email" type="email" placeholder="you@example.com" required />
+              </label>
+              <label class="field">
+                <span>Платёжная система</span>
+                <select name="payment">
+                  <option>ЮKassa</option>
+                  <option>Т-Банк</option>
+                  <option>СБП</option>
+                </select>
+              </label>
+              <button class="btn btn-primary btn-wide" type="submit">Перейти к оплате</button>
+              <p class="form-note">В прототипе платёж имитируется. Для запуска подключаются ЮKassa, Т-Банк или СБП.</p>
+            </form>
           </div>
-          <form class="donate-card reveal" data-form="donation">
-            <div class="segmented" role="radiogroup" aria-label="Тип пожертвования">
-              <label><input type="radio" name="period" value="Разовый донат" checked />Разовый</label>
-              <label><input type="radio" name="period" value="Ежемесячная поддержка" />Ежемесячно</label>
-            </div>
-            <div class="amount-grid" data-amounts>
-              <button type="button" data-amount="500">500 ₽</button>
-              <button type="button" data-amount="1000">1000 ₽</button>
-              <button type="button" data-amount="3000">3000 ₽</button>
-              <button type="button" data-amount="5000">5000 ₽</button>
-            </div>
-            <label class="field">
-              <span>Своя сумма</span>
-              <input name="amount" inputmode="numeric" placeholder="Например, 2500" required />
-            </label>
-            <label class="field">
-              <span>Email для квитанции</span>
-              <input name="email" type="email" placeholder="you@example.com" required />
-            </label>
-            <label class="field">
-              <span>Платёжная система</span>
-              <select name="payment">
-                <option>ЮKassa</option>
-                <option>Т-Банк</option>
-                <option>СБП</option>
-              </select>
-            </label>
-            <button class="btn btn-primary btn-wide" type="submit">Перейти к оплате</button>
-            <p class="form-note">В прототипе платёж имитируется. Для запуска подключаются ЮKassa, Т-Банк или СБП.</p>
-          </form>
         </div>
       </section>
 

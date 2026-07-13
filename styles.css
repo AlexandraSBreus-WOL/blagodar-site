@@ -514,6 +514,17 @@ h3 {
   background: #fbfcfd;
 }
 
+.donate-layout {
+  grid-template-columns: minmax(300px, 0.78fr) minmax(440px, 1.22fr);
+  align-items: start;
+}
+
+.donate-aside {
+  display: grid;
+  gap: 24px;
+  align-content: start;
+}
+
 .project-progress {
   margin-top: 28px;
   padding: 22px;
@@ -548,7 +559,6 @@ h3 {
 }
 
 .donate-video {
-  margin-top: 22px;
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -576,13 +586,14 @@ h3 {
 
 .donate-video video {
   width: 100%;
-  max-height: 420px;
+  max-height: 340px;
   display: block;
   background: #111820;
 }
 
 .donate-card {
   padding: 28px;
+  width: 100%;
 }
 
 .segmented,
