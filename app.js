@@ -195,6 +195,45 @@ function bindReveal() {
   document.querySelectorAll(".reveal").forEach((item) => observer.observe(item));
 }
 
+function loadLazyVideo(video) {
+  if (video.dataset.loaded === "true") return;
+
+  video.src = video.dataset.src;
+  video.dataset.loaded = "true";
+  video.load();
+
+  if (!video.autoplay) return;
+
+  const playRequest = video.play();
+  if (playRequest) {
+    playRequest.catch(() => {});
+  }
+}
+
+function bindLazyVideos() {
+  const videos = document.querySelectorAll("video[data-lazy-video]");
+  if (!videos.length) return;
+
+  if (!("IntersectionObserver" in window)) {
+    videos.forEach(loadLazyVideo);
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        loadLazyVideo(entry.target);
+        observer.unobserve(entry.target);
+      });
+    },
+    { rootMargin: "320px 0px", threshold: 0.01 }
+  );
+
+  videos.forEach((video) => observer.observe(video));
+}
+
 document.querySelector("[data-clear]").addEventListener("click", () => {
   setSubmissions([]);
   renderAdminList();
@@ -205,6 +244,7 @@ window.addEventListener("scroll", updateHeader, { passive: true });
 updateHeader();
 bindNavigation();
 bindReveal();
+bindLazyVideos();
 bindForms();
 bindTabs();
 bindFormLinks();

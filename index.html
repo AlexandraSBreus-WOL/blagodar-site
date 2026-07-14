@@ -35,7 +35,6 @@
     />
     <meta name="twitter:image" content="https://blagodargospel.ru/assets/blagodar-logo.png" />
     <meta name="twitter:image:alt" content="Логотип Blagodar" />
-    <link rel="preconnect" href="https://images.unsplash.com" />
     <link rel="stylesheet" href="./styles.css" />
     <script defer src="./app.js"></script>
   </head>
@@ -68,11 +67,12 @@
         <picture>
           <source
             media="(max-width: 700px)"
-            srcset="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=80"
+            srcset="./assets/hero-community-mobile.jpg"
           />
           <img
-            src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1800&q=82"
+            src="./assets/hero-community-desktop.jpg"
             alt="Современная община людей разных поколений"
+            fetchpriority="high"
           />
         </picture>
         <div class="hero-overlay"></div>
@@ -306,8 +306,7 @@
                 <span>Видеообращение</span>
                 <strong>Приглашение к участию</strong>
               </div>
-              <video controls autoplay muted preload="auto" playsinline controlslist="nodownload" disablepictureinpicture oncontextmenu="return false">
-                <source src="./assets/invitation.mp4" type="video/mp4" />
+              <video controls autoplay muted preload="none" playsinline controlslist="nodownload" disablepictureinpicture oncontextmenu="return false" data-lazy-video data-src="./assets/invitation.mp4">
                 Ваш браузер не поддерживает встроенное видео.
               </video>
             </div>
@@ -411,8 +410,10 @@
 
       <section class="final-cta section-dark">
         <img
-          src="https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?auto=format&fit=crop&w=1800&q=82"
+          src="./assets/final-community.jpg"
           alt="Люди вместе за общим столом"
+          loading="lazy"
+          decoding="async"
         />
         <div class="hero-overlay"></div>
         <div class="container reveal">
