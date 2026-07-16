@@ -560,12 +560,16 @@ h3 {
   color: var(--muted);
 }
 
-.direction-card a {
-  color: var(--gold-deep);
-  font-weight: 800;
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 3px;
+.direction-card strong {
+  color: var(--ink);
+  font-weight: 900;
+}
+
+.direction-card .scripture-ref {
+  color: inherit;
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(102, 112, 133, 0.36);
 }
 
 .donate {
