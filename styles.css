@@ -313,6 +313,56 @@ h3 {
   padding: 108px 0;
 }
 
+.scripture-banner {
+  padding: 62px 0;
+  background:
+    linear-gradient(90deg, rgba(234, 247, 253, 0.92), rgba(255, 247, 226, 0.92)),
+    #fbfcfd;
+}
+
+.scripture-card {
+  position: relative;
+  margin: 0;
+  padding: 34px 38px 32px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.84);
+  box-shadow: 0 16px 48px rgba(24, 32, 42, 0.08);
+}
+
+.scripture-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--gold), var(--orange), var(--sky));
+}
+
+.scripture-card p {
+  max-width: 980px;
+  margin-bottom: 18px;
+  color: var(--ink);
+  font-size: clamp(21px, 2.3vw, 31px);
+  line-height: 1.42;
+  font-weight: 700;
+}
+
+.scripture-card cite {
+  display: inline-flex;
+  color: var(--gold-deep);
+  font-style: normal;
+  font-weight: 900;
+}
+
+.scripture-card a {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
 .split,
 .donate-layout,
 .admin-grid {
@@ -947,6 +997,19 @@ h3 {
 
   .section-pad {
     padding: 74px 0;
+  }
+
+  .scripture-banner {
+    padding: 42px 0;
+  }
+
+  .scripture-card {
+    padding: 26px 22px 24px;
+  }
+
+  .scripture-card p {
+    font-size: 20px;
+    line-height: 1.48;
   }
 
   .donate-layout {
